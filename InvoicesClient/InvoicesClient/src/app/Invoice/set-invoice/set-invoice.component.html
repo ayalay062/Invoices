@@ -1,0 +1,55 @@
+<h3 class="title" *ngIf="!data.invoice;else updateInvoice">
+    New Invoice
+</h3>
+<ng-template #updateInvoice>
+    <h3 class="title" >
+        Update Invoice
+    </h3>
+</ng-template>
+<div class="form-modal">
+
+    <form *ngIf="form" class="form-wrapper-modal-child " [formGroup]="form" (ngSubmit)="save()">
+
+        <mat-form-field appearance="fill">
+            <mat-label> Customer Name</mat-label>
+            <input autocomplete="autocomplete" formControlName="customerName" type="text" matInput placeholder="שם" />
+            <mat-error *ngIf="form.get('customerName')?.errors!= null &&
+            form.get('customerName')?.errors?.['required']"> Required field</mat-error>
+            <mat-error *ngIf="form.get('customerName')?.errors!= null &&
+            form.get('customerName')?.errors?.['minlength']"> Min 2 letters</mat-error>
+
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label> Amount</mat-label>
+            <input autocomplete="autocomplete" formControlName="amount" type="text" matInput placeholder="משפחה" />
+            <mat-error *ngIf="form.get('amount')?.errors!= null &&
+            form.get('amount')?.errors?.['required']"> Required field</mat-error>
+            <mat-error *ngIf="form.get('amount')?.errors!= null &&
+            form.get('amount')?.errors?.['pattern']"> Numbers Only</mat-error>
+
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label> Date</mat-label>
+            <input autocomplete="autocomplete" formControlName="createdDate" type="date" matInput placeholder="מייל" />
+            <mat-error *ngIf="form.get('createdDate')?.errors!= null &&
+            form.get('createdDate')?.errors?.['required']"> Required field</mat-error>
+
+        </mat-form-field>
+
+        <mat-form-field *ngIf="statusList" appearance="fill">
+            <mat-label>Status </mat-label>
+            <mat-select formControlName="statusId">
+                <mat-option [value]="s.id" *ngFor="let s of statusList | async"> {{s.name}}</mat-option>
+            </mat-select>
+
+
+
+        </mat-form-field>
+        <button class="btn-blue" type="submit" [disabled]="!form || !form.valid ">SAVE</button>
+
+    </form>
+
+
+
+  </div>

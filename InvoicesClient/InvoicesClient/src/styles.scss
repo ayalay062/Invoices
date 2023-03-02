@@ -1,0 +1,343 @@
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+
+body * {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+section::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+section::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+section::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: none;
+    border-radius: 10px;
+}
+
+
+
+span:focus,
+div:focus {
+    outline: none !important;
+}
+
+
+
+.btn-grey {
+    padding: 0px 20px;
+    font-size: 12px;
+    line-height: 24px;
+    padding-bottom: 0px;
+    margin: auto;
+    cursor: pointer;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid #7a7a7a;
+    color: #ffffff;
+    background-color: #7a7a7a;
+    transition: background-color 0.35s, opacity 0.35s;
+    border-radius: 15px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.disaply-inline {
+    display: inline-block !important
+}
+
+.btn-blue {
+    cursor: pointer;
+    padding: 2px 30px;
+    font-size: 14px;
+    line-height: 30px;
+    margin: auto;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid #088185;
+    color: #ffffff;
+    background-color: #088185;
+    transition: background-color 0.35s, opacity 0.35s;
+    border-radius: 25px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.btn-blue:disabled {
+    background-color: #ccc;
+    color: white;
+}
+
+.mat-form-field-label mat-label {
+    color: #767676;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    border-bottom: 1px solid #767676;
+}
+
+.form-wrapper .mat-form-field {
+    display: block;
+    width: 200px;
+    margin: auto;
+}
+
+
+
+.form-modal {
+    background-color: #fff;
+    color: #088185 !important;
+    flex-grow: 1;
+    font-size: 16px;
+    line-height: 28px;
+    padding: 30px;
+}
+
+
+
+.form-modal .mat-form-field {
+    display: block;
+}
+
+table.mat-table {
+    width: 90%;
+    margin: auto;
+    background-color: white;
+
+    th.mat-header-cell,
+    td.mat-cell,
+    td.mat-footer-cell {
+        border-bottom: 1px solid #ccc;
+        text-align: center;
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    tr.mat-header-row {
+        height: 40px;
+    }
+
+    th.mat-header-cell::after {
+        content: "";
+        width: 90%;
+        height: 1.5px;
+        text-align: center;
+        position: absolute;
+        bottom: 12px;
+        right: 0;
+    }
+
+
+    th.mat-header-cell,
+    td.mat-cell,
+    td.mat-footer-cell {
+        color: #191919;
+    }
+
+    th.mat-header-cell {
+        color: #0095b7;
+        font-weight: bold;
+        font-size: 0.85rem;
+        position: relative;
+        border: none;
+        text-align: center;
+        background-color: #eaeaea;
+    }
+
+}
+
+
+.mat-form-field-appearance-legacy .mat-form-field-wrapper {
+    color: #191919;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+
+
+.mat-icon {
+    cursor: pointer;
+}
+
+.wrapper-content-header {
+    padding-right: 50px;
+    padding-top: 20px;
+
+    .mat-form-field-flex {
+        border-bottom: 1px solid #088185a8;
+    }
+}
+
+.header-icons .mat-icon {
+    color: #088185;
+    height: 44px;
+    width: 44px;
+    font-size: 30px;
+    line-height: 44px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px;
+    border: 1px solid;
+    border-radius: 50%;
+    padding: 0;
+    text-align: center;
+
+    &:hover {
+        color: white;
+        background-color: #088185;
+        border-color: white;
+    }
+}
+
+
+.mat-form-field-label .mat-placeholder-required.mat-form-field-required-marker {
+    display: inline-block;
+    color: red;
+    margin-right: 2px;
+}
+
+button:focus,
+button:hover {
+    outline: none !important;
+}
+
+
+.mat-datepicker-toggle-active,
+.mat-datepicker-toggle,
+.mat-datepicker-content .mat-calendar-next-button,
+.mat-datepicker-content .mat-calendar-previous-button {
+    color: #088185 !important;
+}
+
+.mat-list-base .mat-list-item.active_link .mat-list-item-content,
+.mat-list-base .mat-list-option.active_link .mat-list-item-content {
+    font-size: 18px;
+    color: white !important;
+}
+
+.mat-calendar-body-selected {
+    background-color: #61a6c1f7 !important;
+}
+
+.mat-drawer-inner-container {
+    overflow-x: hidden !important;
+}
+
+.mat-form-field-suffix .mat-datepicker-toggle-default-icon {
+    width: 1em !important;
+    height: 1em !important;
+}
+
+tr.mat-row,
+tr.mat-footer-row {
+    height: 34px !important;
+}
+
+.swal2-container.swal2-center {
+    z-index: 11111111;
+}
+
+.swal2-styled.swal2-confirm {
+    background-color: #f44336;
+}
+
+
+
+
+img:focus,
+img:hover {
+    outline: none;
+}
+
+@media only screen and (max-width: 600px) {
+
+
+    .container {
+        padding-top: 0px !important;
+    }
+
+    .scale-mobile {
+        transform: scale(0.7);
+        transform-origin: 0;
+    }
+}
+
+.mat-form-field.mat-focused .mat-form-field-label,
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+    color: #767676 !important;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple,
+.mat-toolbar.mat-primary {
+    background-color: #088185a8 !important;
+    box-shadow: 0 -2px 8px rgb(0 0 0 / 9%), 0 4px 8px rgb(0 0 0 / 6%), 0 1px 2px rgb(0 0 0 / 30%), 0 2px 6px rgb(0 0 0 / 15%);
+}
+
+.mat-input-element {
+    caret-color: #767676 !important;
+}
+
+.mat-toolbar-multiple-rows {
+    min-height: 48px;
+}
+
+
+.text-center {
+    text-align: center;
+}
+
+.no-content {
+    display: block;
+    margin: auto;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+
+.mat-dialog-container {
+    background: white;
+    padding: 0 !important;
+    min-width: 400px;
+}
+
+.mat-dialog-container .title {
+    background-color: #088185;
+    color: white;
+    line-height: 60px;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
+.mat-select-value {
+    color: #767676 !important;
+}
+
+.mat-paginator {
+    background: transparent;
+    color: #767676;
+
+    .mat-paginator-container {
+        justify-content: center !important;
+    }
+}
+
+.mat-icon-button.mat-button-disabled.mat-button-disabled {
+
+    color: #ccc;
+}
+
+.header-icons {
+    padding-left: 5%;
+   
+}

@@ -1,0 +1,55 @@
+<div class="header-icons">
+    <mat-icon (click)="addInvoice();">add_circle_outline</mat-icon>
+</div>
+<section class="" *ngIf="dataSource; else noContent">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> Id</th>
+            <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="customerName">
+            <th mat-header-cell *matHeaderCellDef> Customer Name</th>
+            <td mat-cell *matCellDef="let element">{{ element.customerName }}</td>
+        </ng-container>
+        <ng-container matColumnDef="createdDate">
+            <th mat-header-cell *matHeaderCellDef> Date</th>
+            <td mat-cell *matCellDef="let element">
+                {{ element.createdDate |date:"dd/MM/yyyy"}}
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="amount">
+            <th mat-header-cell *matHeaderCellDef>Amount </th>
+            <td mat-cell *matCellDef="let element">{{ element.amount }}</td>
+        </ng-container>
+
+     
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef> Status</th>
+            <td mat-cell *matCellDef="let element">
+                {{ element.invoiceStatus?  element.invoiceStatus.name:'' }}
+            </td>
+        </ng-container>
+     
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Actions</th>
+            <td mat-cell *matCellDef="let element" class="wrapper-actions">
+                <mat-icon (click)="editInvoice(element )">edit</mat-icon>
+                <mat-icon (click)="deleteInvoice(element.id);">close</mat-icon>
+                <mat-icon (click)="viewInvoice(element);">zoom_in</mat-icon>
+    
+            </td>
+        </ng-container>
+
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <mat-paginator #paginator [length]="totalLength" 
+    (page)="getInvoicesE($event)" [pageSizeOptions]="[5, 10, 20,50]"
+        showFirstLastButtons></mat-paginator>
+</section>
+<ng-template #noContent>
+    <h1 class="no-content">  No Data Found</h1>
+</ng-template>

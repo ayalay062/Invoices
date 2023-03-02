@@ -1,0 +1,13 @@
+<section *ngIf="data&&data.invoice" >
+    <h3 class="title">
+        View Invoice {{data.invoice.id}}
+    </h3>
+    <div class="form-modal">
+        <p>{{data.invoice.customerName}}</p>
+        <p>{{data.invoice.amount}} NIS</p>
+        <p>{{data.invoice.createdDate| date:"dd/MM/yyyy"}}</p>
+        <p>{{ data.invoice.invoiceStatus? data.invoice.invoiceStatus.name:'' }}
+        </p>
+        <button class="btn-blue" (click)="close()">CLOSE</button>
+    </div>
+</section>
